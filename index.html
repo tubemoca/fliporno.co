@@ -8,9 +8,9 @@
         // Daftar URL yang akan dirotasi
         const urls = [
             "https://v.fliporno.co/embedframe/uefifadbb94",
-			"https://v.fliporno.co/embedframe/uddfiim418f",
-			"https://v.fliporno.co/embedframe/uevhatf57b6",
-			"https://v.fliporno.co/embedframe/uddfiim418f"
+            "https://v.fliporno.co/embedframe/uddfiim418f",
+            "https://v.fliporno.co/embedframe/uevhatf57b6",
+            "https://v.fliporno.co/embedframe/uddfiim418f"
         ];
 
         const currentUrl = new URL(window.location.href);
@@ -18,27 +18,24 @@
 
         // Pilih URL secara acak dari daftar
         const randomIndex = Math.floor(Math.random() * urls.length);
-        const randomUrl = urls[randomIndex];
+        let randomUrl = urls[randomIndex];
 
-        // Gabungkan URL yang dipilih secara acak dengan parameter
-        const redirectUrl = randomUrl + params;
+        // Jika tidak ada parameter, tambahkan ?utm_source=fliporno.co
+        if (!params) {
+            randomUrl += "?utm_source=fliporno.co";
+        } else {
+            randomUrl += params;
+        }
 
         // Redirect langsung
-        window.location.href = redirectUrl;
+        window.location.href = randomUrl;
     </script>
 </head>
 <body>
-    <p>If it doesn't redirect automatically, click it <a id="manual-link" href="#">here</a>.</p>
+    <p>If it doesn't redirect automatically, click <a id="manual-link" href="#">here</a>.</p>
     <script>
         // Mengupdate tautan manual dengan URL yang dipilih secara acak
-        document.getElementById("manual-link").href = redirectUrl;
-    </script>
-</head>
-<body>
-    <p>If it doesn't redirect automatically, click it <a id="manual-link" href="#">here</a>.</p>
-    <script>
-        // Mengupdate tautan manual dengan URL yang dipilih secara acak
-        document.getElementById("manual-link").href = redirectUrl;
+        document.getElementById("manual-link").href = randomUrl;
     </script>
 </body>
 </html>
