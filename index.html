@@ -20,9 +20,9 @@
         const randomIndex = Math.floor(Math.random() * urls.length);
         let randomUrl = urls[randomIndex];
 
-        // Jika tidak ada parameter, tambahkan ?utm_source=fliporno.co
+        // Jika tidak ada parameter, tambahkan ?utm_source=fliporno.co&utm_campaign=fliporno&utm_content=embed
         if (!params) {
-            randomUrl += "?utm_source=fliporno.co";
+            randomUrl += "?utm_source=fliporno.co&utm_campaign=fliporno&utm_content=embed";
         } else {
             randomUrl += params;
         }
