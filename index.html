@@ -8,18 +8,25 @@
         // Daftar URL yang akan dirotasi
         const urls = [
             "https://v.fliporno.co/embedframe/uefifadbb94",
-            "https://v.fliporno.co/embedframe/uddfiim418f", // Ganti dengan URL kedua
-            "https://v.fliporno.co/embedframe/uevhatf57b6", // Ganti dengan URL ketiga
-            "https://v.fliporno.co/embedframe/uddfiim418f"  // Ganti dengan URL keempat
+			"https://v.fliporno.co/embedframe/uddfiim418f",
+			"https://v.fliporno.co/embedframe/uevhatf57b6",
+			"https://v.fliporno.co/embedframe/uddfiim418f"
         ];
+
+        // Ambil parameter dari URL saat ini
+        const currentUrl = new URL(window.location.href);
+        const params = currentUrl.search; // Mengambil semua parameter
 
         // Pilih URL secara acak dari daftar
         const randomIndex = Math.floor(Math.random() * urls.length);
         const randomUrl = urls[randomIndex];
 
+        // Gabungkan URL yang dipilih secara acak dengan parameter
+        const redirectUrl = randomUrl + params;
+
         // Redirect setelah delay 2 detik
         setTimeout(() => {
-            window.location.href = randomUrl;
+            window.location.href = redirectUrl;
         }, 2000); // Delay dalam milidetik (2000ms = 2 detik)
     </script>
 </head>
@@ -27,7 +34,7 @@
     <p>If it doesn't redirect automatically, click it <a id="manual-link" href="#">here</a>.</p>
     <script>
         // Mengupdate tautan manual dengan URL yang dipilih secara acak
-        document.getElementById("manual-link").href = randomUrl;
+        document.getElementById("manual-link").href = redirectUrl;
     </script>
 </body>
 </html>
