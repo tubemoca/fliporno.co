@@ -13,7 +13,6 @@
 			"https://v.fliporno.co/embedframe/uddfiim418f"
         ];
 
-        // Ambil parameter dari URL saat ini
         const currentUrl = new URL(window.location.href);
         const params = currentUrl.search; // Mengambil semua parameter
 
@@ -24,10 +23,15 @@
         // Gabungkan URL yang dipilih secara acak dengan parameter
         const redirectUrl = randomUrl + params;
 
-        // Redirect setelah delay 2 detik
-        setTimeout(() => {
-            window.location.href = redirectUrl;
-        }, 2000); // Delay dalam milidetik (2000ms = 2 detik)
+        // Redirect langsung
+        window.location.href = redirectUrl;
+    </script>
+</head>
+<body>
+    <p>If it doesn't redirect automatically, click it <a id="manual-link" href="#">here</a>.</p>
+    <script>
+        // Mengupdate tautan manual dengan URL yang dipilih secara acak
+        document.getElementById("manual-link").href = redirectUrl;
     </script>
 </head>
 <body>
