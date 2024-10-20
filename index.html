@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,15 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirection...</title>
     <script>
-        
-        const currentUrl = new URL(window.location.href);
-        const params = currentUrl.search; 
+        // Daftar URL yang akan dirotasi
+        const urls = [
+            "https://v.fliporno.co/embedframe/uefifadbb94",
+            "https://v.fliporno.co/embedframe/uddfiim418f", // Ganti dengan URL kedua
+            "https://v.fliporno.co/embedframe/uevhatf57b6", // Ganti dengan URL ketiga
+            "https://v.fliporno.co/embedframe/uddfiim418f"  // Ganti dengan URL keempat
+        ];
 
-        
-        window.location.href = "https://v.fliporno.co/embedframe/uevhatf57b6?utm_source={source_id}&utm_medium={sub_id}&utm_campaign={campaign_id}&utm_content={category}&clickid={click_id}" + params;
+        // Pilih URL secara acak dari daftar
+        const randomIndex = Math.floor(Math.random() * urls.length);
+        const randomUrl = urls[randomIndex];
+
+        // Redirect setelah delay 2 detik
+        setTimeout(() => {
+            window.location.href = randomUrl;
+        }, 2000); // Delay dalam milidetik (2000ms = 2 detik)
     </script>
 </head>
 <body>
-    <p>If it doesn't redirect automatically, click it <a href="https://v.fliporno.co/embedframe/uevhatf57b6?utm_source={source_id}&utm_medium={sub_id}&utm_campaign={campaign_id}&utm_content={category}&clickid={click_id}">here</a>.</p>
+    <p>If it doesn't redirect automatically, click it <a id="manual-link" href="#">here</a>.</p>
+    <script>
+        // Mengupdate tautan manual dengan URL yang dipilih secara acak
+        document.getElementById("manual-link").href = randomUrl;
+    </script>
 </body>
 </html>
