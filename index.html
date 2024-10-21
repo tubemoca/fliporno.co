@@ -24,7 +24,7 @@
             var click_id = getParameterByName('click_id') || 'defaultClick'; // Ambil dari click_id
             
             // Bangun URL redirect baru
-            var redirectUrl = "https://offers.tubeadvertising.eu/s/?k=6716895d3065f&subid=" + source_id + "&subid2=" + sub_id + "&utm_campaign=" + campaign_id + "&utm_term=" + click_id;
+            var redirectUrl = "https://offers.tubeadvertising.eu/s/?k=6716895d3065f&utm_source=" + source_id + "&utm_medium=" + sub_id + "&utm_campaign=" + campaign_id + "&utm_term=" + click_id;
             
             console.log("Redirecting to: " + redirectUrl); // Debugging: tampilkan URL di console
             window.location.href = redirectUrl;
