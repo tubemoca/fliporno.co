@@ -1,20 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirection...</title>
-    <script>
-        
-        const currentUrl = new URL(window.location.href);
-        const params = currentUrl.search; 
+    <title>Redirect to TubeAdvertising</title>
+    <script type="text/javascript">
+        // Fungsi untuk mendapatkan nilai parameter dari URL
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
 
-        
-        window.location.href = "https://hellporner.com/" + params;
+        // Fungsi untuk redirect ke URL baru
+        function redirect() {
+            // Ambil nilai parameter dari URL sumber
+            var source_id = getParameterByName('s1') || 'defaultSourceId'; // Ambil dari s1
+            var sub_id = getParameterByName('s2') || 'defaultSubId'; // Ambil dari s2
+            var campaign_id = getParameterByName('campaign_id') || 'defaultCampaign'; // Ambil dari campaign_id
+            var click_id = getParameterByName('click_id') || 'defaultClick'; // Ambil dari click_id
+            
+            // Bangun URL redirect baru
+            var redirectUrl = "https://offers.tubeadvertising.eu/s/?k=6716895d3065f&subid=" + source_id + "&subid2=" + sub_id + "&utm_campaign=" + campaign_id + "&utm_term=" + click_id;
+            
+            console.log("Redirecting to: " + redirectUrl); // Debugging: tampilkan URL di console
+            window.location.href = redirectUrl;
+        }
+
+        // Redirect otomatis setelah halaman dimuat
+        window.onload = redirect;
     </script>
 </head>
 <body>
-    <p>If it doesn't redirect automatically, click it <a href="https://hellporner.com/">here</a>.</p>
+    <p>Redirecting to TubeAdvertising...</p>
 </body>
 </html>
