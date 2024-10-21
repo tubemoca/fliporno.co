@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,37 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirection...</title>
     <script>
-        // Daftar URL yang akan dirotasi
-        const urls = [
-            "https://v.globtube.com/embedframe/uekcvcfb2b5",
-            "https://v.globtube.com/embedframe/uecklvva647",
-            "https://v.globtube.com/embedframe/uebctodf272",
-            "https://v.globtube.com/embedframe/ueucppme3f8"
-        ];
-
+        
         const currentUrl = new URL(window.location.href);
-        const params = currentUrl.search; // Mengambil semua parameter
+        const params = currentUrl.search; 
 
-        // Pilih URL secara acak dari daftar
-        const randomIndex = Math.floor(Math.random() * urls.length);
-        let randomUrl = urls[randomIndex];
-
-        // Jika tidak ada parameter, tambahkan ?utm_source=fliporno.co&utm_campaign=fliporno&utm_content=embed
-        if (!params) {
-            randomUrl += "?utm_source=globtube.com&utm_campaign=embed-globtube&utm_content=embed";
-        } else {
-            randomUrl += params;
-        }
-
-        // Redirect langsung
-        window.location.href = randomUrl;
+        
+        window.location.href = "https://globtube.com/promo" + params;
     </script>
 </head>
 <body>
-    <p>If it doesn't redirect automatically, click <a id="manual-link" href="#">here</a>.</p>
-    <script>
-        // Mengupdate tautan manual dengan URL yang dipilih secara acak
-        document.getElementById("manual-link").href = randomUrl;
-    </script>
+    <p>If it doesn't redirect automatically, click it <a href="https://globtube.com/promo">here</a>.</p>
 </body>
 </html>
