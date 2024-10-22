@@ -1,20 +1,25 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirection...</title>
-    <script>
-        
-        const currentUrl = new URL(window.location.href);
-        const params = currentUrl.search; 
-
-        
-        window.location.href = "https://clickadddilla.com/in/p/?spot_id=1420638&cat=25&sub_id=219553420&tb_url=https%3A%2F%2Fpeyqpeb.click%2Fonline-hd%3Ftag_id%3D224295%26cl%3D10%26click%3D1%26f%3D1" + params;
-    </script>
+    <title>Redirect Page</title>
 </head>
 <body>
-    <p>If it doesn't redirect automatically, click it <a href="https://clickadddilla.com/in/p/?spot_id=1420638&cat=25&sub_id=219553420&tb_url=https%3A%2F%2Fpeyqpeb.click%2Fonline-hd%3Ftag_id%3D224295%26cl%3D10%26click%3D1%26f%3D1">here</a>.</p>
+    <script>
+        // Ambil parameter dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const utm_source = urlParams.get('utm_source'); // Ambil nilai utm_source
+        const sid1 = urlParams.get('utm_medium'); // Ambil nilai utm_medium sebagai sid1
+        const campaign_id = urlParams.get('utm_campaign'); // Ambil nilai utm_campaign
+        const category = urlParams.get('utm_content'); // Ambil nilai utm_content
+        const click_id = urlParams.get('clickid'); // Ambil nilai clickid
+
+        // Buat URL tujuan dengan semua parameter
+        const redirectUrl = `https://go2.eabids.com/redirect.go?pid=134412&spaceid=8124410&subid=${utm_source}&sid1=${sid1}&utm_campaign=${campaign_id}&utm_content=${category}&clickid=${click_id}`;
+
+        // Redirect ke URL tujuan
+        window.location.href = redirectUrl;
+    </script>
 </body>
 </html>
