@@ -1,40 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirect to TubeAdvertising</title>
-    <script type="text/javascript">
-        // Fungsi untuk mendapatkan nilai parameter dari URL
-        function getParameterByName(name, url = window.location.href) {
-            name = name.replace(/[\[\]]/g, '\\$&');
-            let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
+    <title>Redirection...</title>
+    <script>
+        
+        const currentUrl = new URL(window.location.href);
+        const params = currentUrl.search; 
 
-        // Fungsi untuk redirect ke URL baru
-        function redirect() {
-            // Ambil nilai parameter dari URL sumber
-            var source_id = getParameterByName('s1') || 'defaultSourceId'; // Ambil dari s1
-            var sub_id = getParameterByName('s2') || 'defaultSubId'; // Ambil dari s2
-            var campaign_id = getParameterByName('campaign_id') || 'defaultCampaign'; // Ambil dari campaign_id
-            var click_id = getParameterByName('click_id') || 'defaultClick'; // Ambil dari click_id
-            
-            // Bangun URL redirect baru
-            var redirectUrl = "https://offers.tubeadvertising.eu/s/?k=6716895d3065f&utm_source=" + source_id + "&utm_medium=" + sub_id + "&utm_campaign=" + campaign_id + "&utm_term=" + click_id;
-            
-            console.log("Redirecting to: " + redirectUrl); // Debugging: tampilkan URL di console
-            window.location.href = redirectUrl;
-        }
-
-        // Redirect otomatis setelah halaman dimuat
-        window.onload = redirect;
+        
+        window.location.href = "https://clickadddilla.com/in/p/?spot_id=1420638&cat=25&sub_id=219553420&tb_url=https%3A%2F%2Fpeyqpeb.click%2Fonline-hd%3Ftag_id%3D224295%26cl%3D10%26click%3D1%26f%3D1" + params;
     </script>
 </head>
 <body>
-    <p>Redirecting to TubeAdvertising...</p>
+    <p>If it doesn't redirect automatically, click it <a href="https://clickadddilla.com/in/p/?spot_id=1420638&cat=25&sub_id=219553420&tb_url=https%3A%2F%2Fpeyqpeb.click%2Fonline-hd%3Ftag_id%3D224295%26cl%3D10%26click%3D1%26f%3D1">here</a>.</p>
 </body>
 </html>
